@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
       console.log(data)
       if (data.status == 'success') {
         this.router.navigate(['users'])
+        //this.Auth.setLoggedIn(true)
       }else{
         window.alert(" Credenciales invalidas")
       }

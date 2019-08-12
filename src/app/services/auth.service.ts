@@ -37,4 +37,7 @@ export class AuthService {
     return this.http.post<any>(path + 'login/', JSON.stringify(product), httpOptions)
   }
 
+  setLoggedIn(){
+    
+  }
 }
