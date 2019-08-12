@@ -13,12 +13,12 @@
                       <div class="grid-body">
                         <div class="row">
                           <div class="col-lg-7 col-md-8 col-sm-9 col-12 mx-auto form-wrapper">
-                            <form action="#">
+                            <form>
                               <div class="form-group input-rounded">
-                                <input type="text" class="form-control" placeholder="Username" />
+                                <input [(ngModel)]="productData.email" [ngModelOptions]="{standalone: true}" type="text" class="form-control"  placeholder="Username"  required/>
                               </div>
                               <div class="form-group input-rounded">
-                                <input type="password" class="form-control" placeholder="Password" />
+                                <input [(ngModel)]="productData.password" [ngModelOptions]="{standalone: true}" type="password" class="form-control"   placeholder="Password" required />
                               </div>
                               <div class="form-inline">
                                 <div class="checkbox">
@@ -27,7 +27,7 @@
                                   </label>
                                 </div>
                               </div>
-                              <button routerLink="/users" class="btn btn-primary btn-block"> Login </button>
+                              <button (click)="addProduct()" class="btn btn-primary btn-block" > Login </button>
                             </form>
                             <div class="signup-link">
                               <p>Don't have an account yet?</p>

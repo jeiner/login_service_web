@@ -11,6 +11,8 @@ import { ContentComponent } from './components/shared/content/content.component'
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { SettingComponent } from './components/shared/setting/setting.component';
 
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { SettingComponent } from './components/shared/setting/setting.component'
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule
    
