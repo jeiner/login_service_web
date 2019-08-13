@@ -13,7 +13,7 @@ import { SettingComponent } from './components/shared/setting/setting.component'
 
 import { FormsModule } from '@angular/forms';
 
-
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -33,7 +33,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule
    
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

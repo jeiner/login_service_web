@@ -4,13 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { PersonaComponent } from './persona/persona.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 
 
 const routes: Routes = [
   {
    path: 'users',
-   component: UserComponent
+   component: UserComponent,
+   canActivate: [AuthGuard]
   },
 
   {

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from '../services/task.service';
+import { UsersService } from '../services/users.service';
+
+import { Users } from './../interfaces/users';
+
 
 @Component({
   selector: 'app-persona',
@@ -6,9 +11,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonaComponent implements OnInit {
 
-  constructor() { }
+  //afiliados: Users[];
+  usuarios  = null;
+  clientes :any = [];
+
+  art={
+    iduser:null,
+    email:null,
+    created_at:null,
+    updated_at: null,
+    api_key: null
+  }
+
+  constructor(private taskService: TaskService, private usersService: UsersService) { }
 
   ngOnInit() {
+    
+    //this.usersService.getAllUsers().subscribe(datos => this.usuarios = datos)
+    this.getAllTasks();
+  }
+
+  recuperarTodos() {
+    this.usersService.getAllUsers().subscribe(result => this.usuarios = result);
+  }
+
+  getAllTasks() {
+    this.taskService.getAllTasks()
+    .subscribe(tasks => {
+      console.log(tasks);
+    });
+  }
+
+   getAllUsers(){
+    this.usersService.getAllUsers()
+    .subscribe( ( result: {} )=> {
+      console.log(result)
+      this.usuarios = result;
+    });
   }
 
 }

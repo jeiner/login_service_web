@@ -14,7 +14,17 @@ const httpOptions = {
 })
 export class AuthService {
 
+  private  loggedInStatus = false
+
   constructor(private http: HttpClient) { }
+
+  setLoggedIn(value: boolean){
+    this.loggedInStatus = value
+  }
+
+  get isLoggedIn() {
+    return this.loggedInStatus
+  }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -37,7 +47,6 @@ export class AuthService {
     return this.http.post<any>(path + 'login/', JSON.stringify(product), httpOptions)
   }
 
-  setLoggedIn(){
-    
-  }
+  
+
 }
