@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Users } from '../interfaces/users';
 import { UsersService } from '../services/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actualizaruser',
@@ -41,11 +42,32 @@ export class ActualizaruserComponent implements OnInit {
   }
   UpdateUser(){
     this.userService.put(this.user).subscribe((data)=>{
-      alert('Actualizado Coreectamente');
+      Swal.fire({
+        position: 'center',
+        type: 'success',
+        title: 'Actualizado Coreectamente',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      this.user.Apellidos='';
+      this.user.DNI='';
+      this.user.Direccion='';
+      this.user.Telefono='';
+      this.user.email='';
+      this.user.nombre='';
+      this.user.password='';
+    
+    
       console.log(data);
     },(error)=>{
       console.log(error);
-      alert('obtuvo un error');
+      Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Obtuvo un error!',
+        footer: '<a href>Why do I have this issue?</a>'
+      })
+     
     });
   }
  

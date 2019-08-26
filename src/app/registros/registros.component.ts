@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../interfaces/users';
 import { UsersService } from '../services/users.service';
+import Swal from 'sweetalert2';
 import { error } from 'util';
 
 @Component({
@@ -31,7 +32,21 @@ export class RegistrosComponent implements OnInit {
   }
   SaveUser(){
     this.userService.save(this.user).subscribe((data)=>{
-      alert('registro exitoso');
+      Swal.fire({
+        position: 'top-end',
+        type: 'success',
+        title: 'Registrado Correctamente',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      this.user.Apellidos="";
+      this.user.DNI='';
+      this.user.Direccion='';
+      this.user.Telefono='';
+      this.user.email='';
+      this.user.nombre='';
+      this.user.password='';
+
       console.log(data);
     },(error)=>{
       console.log(error);

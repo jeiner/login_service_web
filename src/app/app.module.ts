@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { RegistrosComponent } from './registros/registros.component';
 import { ActualizaruserComponent } from './actualizaruser/actualizaruser.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ActualizaruserComponent } from './actualizaruser/actualizaruser.compone
     SettingComponent,
     routingComponents,
     RegistrosComponent,
-    ActualizaruserComponent
+    ActualizaruserComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

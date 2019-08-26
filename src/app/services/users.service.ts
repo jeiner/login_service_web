@@ -8,7 +8,7 @@ import { Users } from './../interfaces/users';
   providedIn: 'root'
 })
 export class UsersService {
-  CrearUser='http://192.168.1.75:8000/api';
+  CrearUser='http://192.168.1.140:8000/api';
   constructor(private httpClient:HttpClient) { }
   get(){
    return this.httpClient.get(this.CrearUser +'/allUser');
