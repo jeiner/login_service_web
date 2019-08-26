@@ -2,34 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Users } from './../interfaces/users';
 
-import{tap } from 'rxjs/operators';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json'
-  })
-};
-
-interface myData {
-  iduser: string,
-  email: string,
-  created_at: string,
-  api_key: string
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-
-  constructor(private http: HttpClient) { }
-
-  getAllUsers(){
-    const path = 'http://localhost:8089/api/users';
-    return this.http.get<Users[]>(path, httpOptions);
+  CrearUser = 'http://localhost:8089/api';
+  constructor(private httpClient: HttpClient) { }
+  get() {
+   return this.httpClient.get(this.CrearUser + '/allUser');
+  }
+  save(users: Users) {
+ const headers = new HttpHeaders({
+  'Content-Type':  'application/json'
+ });
+ return this.httpClient.post(this.CrearUser + '/Persona/?', users ,{ headers: headers} );
   }
 
-  getSomeData(){
-    const path = 'http://localhost:8089/users';
-  }
+  put(user) {
+    const headers = new HttpHeaders({
+     'Content-Type':  'application/json'
+    });
+    return this.httpClient.put(this.CrearUser + '/userUpdate/' + user.idPersona, user ,{headers: headers});
+     }
+     delete(id) {
+      return this.httpClient.delete(this.CrearUser + '/delete/' + id);
+     }
 }

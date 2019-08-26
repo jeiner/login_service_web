@@ -9,27 +9,25 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  @Input() productData = { email:'', password: ''};
+  @Input() productData = { email: '', password: ''};
 
-  constructor(private Auth:AuthService, private router:Router) { }
+  constructor(private Auth: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  addProduct(){
+  addProduct() {
     this.Auth.getUserDetail(this.productData).subscribe(data => {
-      console.log(data)
-      if (data.status == 'success') {
-        this.router.navigate(['users'])
-        this.Auth.setLoggedIn(true)
-      }else{
-        window.alert(" Credenciales invalidas")
-        
+      console.log(data);
+      if (data.status === 'success') {
+        this.router.navigate(['users']);
+        this.Auth.setLoggedIn(true);
+      } else {
+        window.alert('Credenciales invalidas ');
       }
     }, (err) => {
       console.log(err);
     });
-    
   }
 
   // loginUser(event) {
