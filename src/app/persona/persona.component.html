@@ -41,26 +41,32 @@
                                   <tr>
                                     
                                     <th>Iduser</th>
-                                    <th>Email</th>
-                                    <th>created_at</th>
-                                    <th>updated_at</th>
-                                    <th>api_key</th>
+                                    <th>Id</th>
+                                    <th>Tittle</th>
+                                    <th>Opcion</th>
+                                    <!-- <th>api_key</th> -->
                                     
                                   </tr>
                                 </thead>
 
                                 <tbody>
-                                  {{usuarios | json }}
                                   
+                              
                                     <tr *ngFor="let art of usuarios" >  
-                                        
-                                        
-                                        <td>{{ art.iduser }}</td>
-                                        <td>{{ art.email }}</td>
-                                        <td>{{ art.created_at }}</td>
-                                        <td>{{ art.updated_at }}</td>
-                                        <td>{{ art.api_key }}</td>
-
+                                      <td>{{ art.userId }}</td>
+                                      <td>{{ art.id }}</td>
+                                      <td>{{ art.title }}</td>
+                                      <!-- <td>{{ art.updated_at }}</td>
+                                      <td>{{ art.api_key }}</td>
+                                      <td>{{ art.persona.idPersona }}</td>
+                                      <td>{{ art.persona.nombre }}</td>
+                                      <td>{{ art.persona.Apellidos }}</td>
+                                      <td>{{ art.persona.Telefono }}</td>
+                                      <td>{{ art.persona.edad }}</td>
+                                      <td>{{ art.persona.DNI }}</td>
+                                      <td>{{ art.persona.Direccion }}</td>
+                                      <td>{{ art.persona.user_id }}</td> -->
+                                    </tr>
                                   
                                 </tbody>
                               </table>

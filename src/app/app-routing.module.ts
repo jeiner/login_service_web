@@ -22,7 +22,8 @@ const routes: Routes = [
 
   {
     path: 'clientes',
-    component: PersonaComponent
+    component: PersonaComponent,
+    canActivate: [AuthGuard]
   },
 
   { path: '',

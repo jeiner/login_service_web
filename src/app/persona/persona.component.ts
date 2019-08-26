@@ -28,7 +28,7 @@ export class PersonaComponent implements OnInit {
   ngOnInit() {
     
     //this.usersService.getAllUsers().subscribe(datos => this.usuarios = datos)
-    this.getAllTasks();
+    this.getAllUsers();
   }
 
   recuperarTodos() {
@@ -38,6 +38,7 @@ export class PersonaComponent implements OnInit {
   getAllTasks() {
     this.taskService.getAllTasks()
     .subscribe(tasks => {
+      this.usuarios = tasks;
       console.log(tasks);
     });
   }
@@ -45,8 +46,9 @@ export class PersonaComponent implements OnInit {
    getAllUsers(){
     this.usersService.getAllUsers()
     .subscribe( ( result: {} )=> {
-      console.log(result)
-      this.usuarios = result;
+      this.clientes = [];
+      this.clientes = result;
+      console.log(this.clientes);
     });
   }
 
