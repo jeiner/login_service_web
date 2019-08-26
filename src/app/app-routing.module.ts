@@ -4,7 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { PersonaComponent } from './persona/persona.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
+import { RegistrosComponent } from './registros/registros.component';
 import { AuthGuard } from './auth.guard';
+import { ActualizaruserComponent } from './actualizaruser/actualizaruser.component';
 
 
 
@@ -12,7 +14,7 @@ const routes: Routes = [
   {
    path: 'users',
    component: UserComponent,
-   canActivate: [AuthGuard]
+   
   },
 
   {
@@ -21,8 +23,17 @@ const routes: Routes = [
   },
 
   {
-    path: 'clientes',
-    component: PersonaComponent
+    path: 'registros',
+   component: RegistrosComponent
+  },
+
+  {
+    path: 'update',
+    component: ActualizaruserComponent
+  },
+  {
+    path: 'update/:id',
+    component: ActualizaruserComponent
   },
 
   { path: '',
@@ -38,4 +49,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [UserComponent, LoginComponent, PersonaComponent ]
+export const routingComponents = [UserComponent, LoginComponent, PersonaComponent, RegistrosComponent ]

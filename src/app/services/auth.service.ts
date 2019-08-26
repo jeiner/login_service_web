@@ -42,7 +42,7 @@ export class AuthService {
 
   getUserDetail(product) : Observable<any> {
     //post these details  to API server return  user info to if correct
-    const path = 'http://localhost:8089/api/'; //http://localhost:8000/api/login/
+    const path = 'http://192.168.1.75:8000/api/'; //http://localhost:8000/api/login/
     console.log(product);
     return this.http.post<any>(path + 'login/', JSON.stringify(product), httpOptions)
   }

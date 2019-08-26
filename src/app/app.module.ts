@@ -14,6 +14,8 @@ import { SettingComponent } from './components/shared/setting/setting.component'
 import { FormsModule } from '@angular/forms';
 
 import { AuthGuard } from './auth.guard';
+import { RegistrosComponent } from './registros/registros.component';
+import { ActualizaruserComponent } from './actualizaruser/actualizaruser.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { AuthGuard } from './auth.guard';
     ContentComponent,
     FooterComponent,
     SettingComponent,
-    routingComponents
+    routingComponents,
+    RegistrosComponent,
+    ActualizaruserComponent
   ],
   imports: [
     BrowserModule,

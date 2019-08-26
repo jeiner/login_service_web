@@ -10,44 +10,14 @@ import { Users } from './../interfaces/users';
   templateUrl: './persona.component.html'
 })
 export class PersonaComponent implements OnInit {
-
-  //afiliados: Users[];
-  usuarios  = null;
-  clientes :any = [];
-
-  art={
-    iduser:null,
-    email:null,
-    created_at:null,
-    updated_at: null,
-    api_key: null
-  }
-
-  constructor(private taskService: TaskService, private usersService: UsersService) { }
+  constructor() { }
 
   ngOnInit() {
     
     //this.usersService.getAllUsers().subscribe(datos => this.usuarios = datos)
-    this.getAllTasks();
+
   }
 
-  recuperarTodos() {
-    this.usersService.getAllUsers().subscribe(result => this.usuarios = result);
-  }
-
-  getAllTasks() {
-    this.taskService.getAllTasks()
-    .subscribe(tasks => {
-      console.log(tasks);
-    });
-  }
-
-   getAllUsers(){
-    this.usersService.getAllUsers()
-    .subscribe( ( result: {} )=> {
-      console.log(result)
-      this.usuarios = result;
-    });
-  }
+  
 
 }

@@ -10,20 +10,8 @@ import { UsersService } from './services/users.service';
 export class AppComponent {
   title = 'angular6-compradores';
 
-  constructor(private taskService: TaskService, private usersService: UsersService ){}
+  constructor(){}
 
-  getAllTasks() {
-    this.taskService.getAllTasks()
-    .subscribe(tasks => {
-      console.log(tasks);
-    });
-  }
-
-  getAllUsers() {
-    this.usersService.getAllUsers()
-    .subscribe(users => {
-      console.log(users)
-    });
-  }
+ 
 
 }

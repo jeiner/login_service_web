@@ -8,12 +8,4 @@ import { Task } from './../interfaces/task';
 })
 export class TaskService {
 
-  constructor(private http: HttpClient ) { }
-
-  getAllTasks() {
-    const path = 'https://jsonplaceholder.typicode.com/posts';
-    return this.http.get<Task[]>(path);
-  }
-
-  
 }
