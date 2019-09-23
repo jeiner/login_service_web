@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -17,6 +18,8 @@ import { AuthGuard } from './auth.guard';
 import { RegistrosComponent } from './registros/registros.component';
 import { ActualizaruserComponent } from './actualizaruser/actualizaruser.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { PeliculaComponent } from './pelicula/pelicula.component';
+import { RegistrarPeliculaComponent } from './registrar-pelicula/registrar-pelicula.component';
 
 
 @NgModule({
@@ -30,10 +33,13 @@ import { PerfilComponent } from './perfil/perfil.component';
     routingComponents,
     RegistrosComponent,
     ActualizaruserComponent,
-    PerfilComponent
+    PerfilComponent,
+    PeliculaComponent,
+    RegistrarPeliculaComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule

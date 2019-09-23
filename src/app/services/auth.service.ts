@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   getUserDetail(product): Observable<any> {
-    const path = 'http://localhost:8089/api/';
+    const path = 'http://localhost:8000/api/';
     console.log(product);
     return this.http.post<any>(path + 'login/', JSON.stringify(product), httpOptions);
   }

@@ -8,6 +8,8 @@ import { RegistrosComponent } from './registros/registros.component';
 import { AuthGuard } from './auth.guard';
 import { ActualizaruserComponent } from './actualizaruser/actualizaruser.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { PeliculaComponent } from './pelicula/pelicula.component';
+import { RegistrarPeliculaComponent } from './registrar-pelicula/registrar-pelicula.component';
 
 
 
@@ -26,13 +28,24 @@ const routes: Routes = [
   {
     path: 'registros',
    component: RegistrosComponent,
-   canActivate: [AuthGuard]
+  
+  },
+  {
+    path: 'Peliculas',
+   component: PeliculaComponent,
+  
+  },
+  {
+    path: 'RegisPelicula',
+   component: RegistrarPeliculaComponent,
+  
   },
   {
     path: 'perfil',
    component: PerfilComponent,
    canActivate: [AuthGuard]
   },
+  
 
   {
     path: 'update',

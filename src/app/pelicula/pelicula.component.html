@@ -1,0 +1,48 @@
+<nav class="t-header">
+    <app-header></app-header>
+  </nav>
+  
+  <div class="page-body" >
+    <div>
+        <app-menu></app-menu>
+    </div>
+    <div class="page-content-wrapper">
+        <div class="page-content-wrapper-inner">
+            <div class="grid">
+                <div class="card-header card-bg-info">
+                  CARTELERA PELICULAS EN ESTRENO
+                  </div>
+              <div class="grid-body">
+                <div class="item-wrapper">
+                   <!-- Card -->
+<div class="card col-6"  *ngFor="let pelicula of peli">
+              <img class="card-img-top" width="250" height="200" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+              <!-- Card content -->
+              <div class="card-body">
+                <!-- Title -->
+                <h4 class="card-title" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;text-align: center">{{pelicula.Titulo}}<a></a></h4>
+                <!-- Text -->
+                <p class="card-text">{{pelicula.Descripcion}}</p>
+               <span>
+                 <label class="text-dark">Fecha de estreno: </label> <label style="color: black">{{pelicula.Fecha_estreno}}</label>
+                 <label style="margin-left: 25px;" class="text-dark">Puntaje: </label> <label style="margin-left: 25px;" style="color: black" >{{pelicula.Ranking}}%</label>
+               </span><br>
+                <!-- Button -->
+                <a (click)="onPreUpdateBook(book)" data-toggle="modal" data-target="#DetallePelicula" class="btn btn-primary"Title="Detalle De esta Pelicula" ><i class="mdi mdi-arrow-right-thick"></i></a>
+              </div>
+         
+      
+     
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+    </div>
+        
+     
+  </div>
+

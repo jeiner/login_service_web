@@ -14,14 +14,13 @@ export class RegistrosComponent implements OnInit {
   user: Users= {
     email:null,
     password:null,
-    created_at:null,
-    updated_at:null,
     api_key:null,
-    nombre:null,
+    Nombre:null,
     Apellidos:null,
-    DNI:null,
-    Direccion:null,
-    Telefono:null,
+     Dni:null,
+     Telefono:null,
+     Rol:null,
+     Direccion:null,
     idPersona:null
   };
 

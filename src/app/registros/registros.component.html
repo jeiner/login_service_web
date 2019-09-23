@@ -1,12 +1,4 @@
 
-<nav class="t-header">
-  <app-header></app-header>
-</nav>
-
-<div class="page-body" >
-  <div>
-      <app-menu></app-menu>
-  </div>
 
   <div class="page-content-wrapper">
       <div class="page-content-wrapper-inner">
@@ -24,7 +16,7 @@
                         <label for="nombre">Nombre</label>
                       </div>
                       <div class="col-md-9 showcase_content_area">
-                        <input [(ngModel)]="user.nombre" type="text" class="form-control" id="nombre" placeholder="Escribe aqui......">
+                        <input [(ngModel)]="user.Nombre" type="text" class="form-control" id="Nombre" placeholder="Escribe aqui......">
                       </div>
                     </div>
                     <div class="form-group row showcase_row_area">
@@ -57,7 +49,7 @@
                         <label for="dni">DNI</label>
                       </div>
                       <div class="col-md-9 showcase_content_area">
-                        <input  [(ngModel)]="user.DNI" type="number" class="form-control" id="dni" placeholder="Escribe aqui......">
+                        <input  [(ngModel)]="user.Dni" type="number" class="form-control" id="Dni" placeholder="Escribe aqui......">
                       </div>
                     </div>
                     <div class="form-group row showcase_row_area">
@@ -76,9 +68,19 @@
                         <input [(ngModel)]="user.Direccion"  type="text" class="form-control" id="direccion"placeholder="Escribe aqui......">
                       </div>
                     </div>
+                    <div class="form-group row showcase_row_area">
+                        <div class="col-md-3 showcase_text_area">
+                          <label for="direccion">Rol</label>
+                        </div>
+                        <div class="col-md-9 showcase_content_area">
+                          <input [(ngModel)]="user.Rol"  type="text" class="form-control" id="direccion"placeholder="Escribe aqui......">
+                        </div>
+                      </div>
                    <br>
                     <div>
-                      <button style="margin-left: 60px;" (click)="SaveUser()" class="btn btn-outline-success">REGISTRAR USUARIOS</button>
+                        <button style="margin-left: 60px;" routerLink="/login" class="btn btn-outline-danger">REGRESAR</button>
+                        <button style="margin-left: 60px;" (click)="SaveUser()" class="btn btn-outline-success">REGISTRAR USUARIOS</button>
+
                     </div>
                     
                   </div>
@@ -89,7 +91,3 @@
         </div>
       </div>
       
-  </div>
-      
-   
-</div>

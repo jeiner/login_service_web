@@ -13,15 +13,14 @@ export class ActualizaruserComponent implements OnInit {
   user: Users= {
     email:null,
     password:null,
-    created_at:null,
-    updated_at:null,
     api_key:null,
-    nombre:null,
+    Nombre:null,
     Apellidos:null,
-    DNI:null,
+    Dni:null,
     Direccion:null,
     Telefono:null,
-    iduser:null
+    Rol:null,
+    idUsuario:null
   };
  id:any;
  validar:boolean=false;
@@ -32,7 +31,7 @@ export class ActualizaruserComponent implements OnInit {
       this.validar=true;
       this.userService.get().subscribe((data:Users[])=>{
         this.users= data;
-        this.user=this.users.find((u)=>{return u.iduser==this.id});
+        this.user=this.users.find((u)=>{return u.idUsuario==this.id});
         console.log(this.user);
       })
     }else{
@@ -50,11 +49,11 @@ export class ActualizaruserComponent implements OnInit {
         timer: 1500
       })
       this.user.Apellidos='';
-      this.user.DNI='';
+      this.user.Dni='';
       this.user.Direccion='';
       this.user.Telefono='';
       this.user.email='';
-      this.user.nombre='';
+      this.user.Nombre='';
       this.user.password='';
     
     
